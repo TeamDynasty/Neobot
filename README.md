@@ -1,5 +1,9 @@
 # Neobot
-# The merch bot
+
+
+- Neobot is supposed to be a simple merch system with xp
+
+
 
 Commands : 
 
