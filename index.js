@@ -11,7 +11,7 @@ let userData = JSON.parse(fs.readFileSync('Storage/userData.json', 'utf8'));
 
 // CONNEXION ///////////////////////////////////////////////////
 
-bot.login('********************************************');
+bot.login(process.env.BOT_TOKEN);
 
 bot.on("ready", () => {
     console.log("Online")
