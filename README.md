@@ -7,4 +7,4 @@ Commands :
 - $money : Show your money on the bank
 - $DAILY : Get the daily reward
 - $GUILD : Show stats about Discord's king
-- $GLOBAL : Show all the server Discord's king
+- $GLOBAL : Show stats about Discord's king in all severs
