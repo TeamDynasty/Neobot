@@ -70,7 +70,7 @@ if (msgu === prefix + 'MONEY' || msgu === prefix + 'BALANCE') {
 if (msg === prefix + 'DAILY') {
   if (userData[sender.id + message.guild.id].lastDaily != moment().format('L')) {
       userData[sender.id + message.guild.id].lastDaily = moment().format('L')
-      userData[sender.id + message.guild.id].money += 200;
+      userData[sender.id + message.guild.id].money += 500;
       message.channel.send({embed:{
         title:"Daily Reward",
         color: 0x4dff00,
