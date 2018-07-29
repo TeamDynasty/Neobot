@@ -10,7 +10,6 @@ const items = JSON.parse(fs.readFileSync('items.json', 'utf8'));
 // STORAGE ///////////////////////////////////////////////////
 
 let userData = JSON.parse(fs.readFileSync('Storage/userData.json', 'utf8'));
-const items = JSON.parse(fs.readFileSync('items.json', 'utf8'));
 
 // CONNEXION ///////////////////////////////////////////////////
 
@@ -231,7 +230,6 @@ fs.writeFile('Storage/userData.json', JSON.stringify(userData), (err) => {
       .setTitle("Commands list : ")
       .addField("$cmd", "Show bot commands")
       .addField("$money", "Show your money")
-      .addField("$BUY", "Show items to buy")
       .addField("$DAILY", "Get your daily reward")
       .addField("$GUILD", "Show stats about Discord's king")
       .addField("$GLOBAL", "Show stats about Discord's king in all severs")
