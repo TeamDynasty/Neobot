@@ -5,7 +5,6 @@ const bot = new Discord.Client();
 const fs = require('fs');
 const moment = require('moment');
 const modRole = '# 𝙁𝙤𝙣𝙙𝙖𝙩𝙚𝙪𝙧 #';
-const items = JSON.parse(fs.readFileSync('items.json', 'utf8'));
 
 // STORAGE ///////////////////////////////////////////////////
 
