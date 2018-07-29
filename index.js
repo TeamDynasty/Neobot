@@ -5,10 +5,12 @@ const bot = new Discord.Client();
 const fs = require('fs');
 const moment = require('moment');
 const modRole = '# 𝙁𝙤𝙣𝙙𝙖𝙩𝙚𝙪𝙧 #';
+const items = JSON.parse(fs.readFileSync('items.json', 'utf8'));
 
 // STORAGE ///////////////////////////////////////////////////
 
 let userData = JSON.parse(fs.readFileSync('Storage/userData.json', 'utf8'));
+const items = JSON.parse(fs.readFileSync('items.json', 'utf8'));
 
 // CONNEXION ///////////////////////////////////////////////////
 
@@ -97,7 +99,39 @@ if (msg === prefix + 'DAILY') {
 
 
 
+// BUY ////////////////////////////////////////////////////
 
+if (msg === prefix + 'BUY') {
+  let categories = [];
+
+  if (!args.join(" ")) {
+    for (var i in items) {
+      if (!categories.includes(items[i].type)) {
+        categories.push(items[i].type)
+
+      }
+    }
+    const embed = new Discord.RichEmbed()
+    .setDescription('Avalible Items')
+    .setColor(0x4dff00)
+
+    for (var i = 0; i < categories.lenght; i++) {
+      var tempDesc = '';
+
+      for (var c in items) {
+        if (categories[i] === items[c].type) {
+          tempDesc += `${items[c].name} - $${items[c].price} - ${items[c].desc}\n`;
+        }
+      }
+      embed.addFiels(categories[i], tempDesc);
+    }
+
+    message.channel.send({embed})
+
+    }
+
+
+  }
 
 
 
@@ -243,6 +277,7 @@ fs.writeFile('Storage/userData.json', JSON.stringify(userData), (err) => {
       .setTitle("Commands list : ")
       .addField("$cmd", "Show bot commands")
       .addField("$money", "Show your money")
+      .addField("$BUY", "Show items to buy")
       .addField("$DAILY", "Get your daily reward")
       .addField("$GUILD", "Show stats about Discord's king")
       .addField("$GLOBAL", "Show stats about Discord's king in all severs")
