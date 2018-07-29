@@ -98,52 +98,6 @@ if (msg === prefix + 'DAILY') {
 
 
 
-
-// BUY ////////////////////////////////////////////////////
-
-if (msg === prefix + 'BUY') {
-  let categories = [];
-
-  if (!args.join(" ")) {
-    for (var i in items) {
-      if (!categories.includes(items[i].type)) {
-        categories.push(items[i].type)
-
-      }
-    }
-    const embed = new Discord.RichEmbed()
-    .setDescription('Avalible Items')
-    .setColor(0x4dff00)
-
-    for (var i = 0; i < categories.lenght; i++) {
-      var tempDesc = '';
-
-      for (var c in items) {
-        if (categories[i] === items[c].type) {
-          tempDesc += `${items[c].name} - $${items[c].price} - ${items[c].desc}\n`;
-        }
-      }
-      embed.addFiels(categories[i], tempDesc);
-    }
-
-    message.channel.send({embed})
-
-    }
-
-
-  }
-
-
-
-
-
-
-
-
-
-
-
-
 if (msg === prefix + 'GLOBAL') {
 
 var globalMoney = 0;
